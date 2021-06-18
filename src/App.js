@@ -15,7 +15,7 @@ function App() {
     start,
     restart,
     isRunning,
-  } = useTimer({ expiryTimestamp, autoStart: false, onExpire: () => console.warn('onExpire called') })
+  } = useTimer({ expiryTimestamp, autoStart: false })
 
   if (seconds < 10) {
     seconds = "0" + seconds
