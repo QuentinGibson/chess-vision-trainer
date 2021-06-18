@@ -48,9 +48,21 @@
 }
 
 .score-board--record {
-  display: inline-block;
+  min-height: 43vh;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .score-board--record_wrong_logo {
   display: block;
+}
+.score-board--record_wrong_square {
+  color: red
+}
+
+.score-board--record-data {
+  margin: 0 5px;
+  display: flex;
+  flex-direction: column;
+  width: 30px;
 }
