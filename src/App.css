@@ -1,0 +1,56 @@
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-game {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.score-board {
+  margin-left: 30px;
+  width: 400px;
+  min-height: 560px;
+  background: #121c24;
+  display: flex;
+  flex-direction: column;
+}
+
+.score-board--title {
+  align-self: center;
+}
+
+.score-board--timer {
+  align-self: center;
+}
+
+.score-board--record_correct_logo {
+  display: block;
+}
+
+.score-board--record_correct_square {
+  color: green;
+}
+
+.App-score {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.score-board--record {
+  display: inline-block;
+}
+
+.score-board--record_wrong_logo {
+  display: block;
+}
