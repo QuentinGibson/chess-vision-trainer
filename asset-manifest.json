@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/chess-vision-trainer/static/css/main.00848bdc.chunk.css",
+    "main.js": "/chess-vision-trainer/static/js/main.9f6ab62d.chunk.js",
+    "main.js.map": "/chess-vision-trainer/static/js/main.9f6ab62d.chunk.js.map",
+    "runtime-main.js": "/chess-vision-trainer/static/js/runtime-main.7dfc465e.js",
+    "runtime-main.js.map": "/chess-vision-trainer/static/js/runtime-main.7dfc465e.js.map",
+    "static/js/2.0b9f53f2.chunk.js": "/chess-vision-trainer/static/js/2.0b9f53f2.chunk.js",
+    "static/js/2.0b9f53f2.chunk.js.map": "/chess-vision-trainer/static/js/2.0b9f53f2.chunk.js.map",
+    "static/js/3.243dbaa8.chunk.js": "/chess-vision-trainer/static/js/3.243dbaa8.chunk.js",
+    "static/js/3.243dbaa8.chunk.js.map": "/chess-vision-trainer/static/js/3.243dbaa8.chunk.js.map",
+    "index.html": "/chess-vision-trainer/index.html",
+    "static/css/main.00848bdc.chunk.css.map": "/chess-vision-trainer/static/css/main.00848bdc.chunk.css.map",
+    "static/js/2.0b9f53f2.chunk.js.LICENSE.txt": "/chess-vision-trainer/static/js/2.0b9f53f2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7dfc465e.js",
+    "static/js/2.0b9f53f2.chunk.js",
+    "static/css/main.00848bdc.chunk.css",
+    "static/js/main.9f6ab62d.chunk.js"
+  ]
+}
