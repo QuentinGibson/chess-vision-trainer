@@ -71,16 +71,16 @@ function App() {
   return (
     <div className="App">
       <main className="App-header">
-        <span className="App-Title text-gray-800 dark:text-gray-100 text-5xl font-bold mb-8">Chess Vision Trainer</span>
+        <span className="App-Title text-gray-800 text-5xl font-bold mb-8">Chess Vision Trainer</span>
         <span className="App-score">Click On: {square}</span>
         <div className="App-game">
           <Chessboard showNotation={false} onSquareClick={handleClick} />
           <section className="score-board w-full bg-white dark:bg-gray-800 py-5 flex items-start sm:items-center justify-between px-5 sm:px-10 shadow rounded-t">
-            <span className="score-board--title text-gray-800 dark:text-gray-100 text-lg font-bold">
+            <span className="score-board--title text-gray-800 text-lg font-bold">
               Score : {score}
             </span>
 
-            <span className="score-board--timer text-gray-800 dark:text-gray-100 text-lg font-bold">{minutes}:{seconds}</span>
+            <span className="score-board--timer text-gray-800 text-lg font-bold">{minutes}:{seconds}</span>
             <div className="score-board--record">
               {recordElements}
             </div>
