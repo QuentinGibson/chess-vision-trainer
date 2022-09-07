@@ -1,4 +1,5 @@
 const path = require("path");
+const Icons = require("unplugin-icons/vite");
 const Inspect = require("vite-plugin-inspect");
 const Unocss = require("unocss/vite");
 module.exports = {
@@ -19,6 +20,20 @@ module.exports = {
   async viteFinal(config, { configType }) {
     config.plugins.push(Unocss.default());
     config.plugins.push(Inspect());
+    config.plugins.push(
+      Icons({
+        iconCustomizer(collection, icon, props) {
+          if (collection === "carbon" && icon === "checkmark-outline") {
+            props.color = "green";
+          }
+          if (collection === "carbon" && icon === "close-outline") {
+            props.color = "red";
+          }
+        },
+        compiler: "jsx",
+        jsx: "react",
+      })
+    );
     return config;
   },
 };
