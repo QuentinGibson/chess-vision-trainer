@@ -1,23 +1,13 @@
-import GameContext from "./GameContext";
 import MainMenu from "./components/MainMenu/MainMenu";
+import GameContextProvider from "./GameContextProvider";
 
 import "./App.css";
 
-type Attempt = {
-  correct: boolean;
-  square: string;
-};
-type GameData = {
-  attemptList: Attempt[];
-};
-
-const defaultValues: GameData = { attemptList: [] };
-
 function App() {
   return (
-    <GameContext.Provider value={defaultValues}>
+    <GameContextProvider>
       <MainMenu />
-    </GameContext.Provider>
+    </GameContextProvider>
   );
 }
 

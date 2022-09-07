@@ -1,11 +1,12 @@
-import { createContext } from "react";
-type Attempt = {
-  correct: boolean;
-  square: string;
-};
-type GameData = {
-  attemptList: Attempt[];
-};
-const GameContext = createContext({ attemptList: [] } as GameData);
+import { createContext, Dispatch } from "react";
+import { GameActions } from "./actions";
+import { GameState, initialGameState } from "./state";
+const GameContext = createContext<{
+  state: GameState;
+  dispatch: Dispatch<GameActions>;
+}>({
+  state: initialGameState,
+  dispatch: () => undefined,
+});
 
 export default GameContext;
