@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 export default {
   title: "Score Board",
   component: ScoreBoard,
+  layout: "centered",
 } as ComponentMeta<typeof ScoreBoard>;
 
 const Template: ComponentStory<typeof ScoreBoard> = (args) => (
@@ -11,6 +12,66 @@ const Template: ComponentStory<typeof ScoreBoard> = (args) => (
 export const AllCorrect = Template.bind({});
 AllCorrect.args = {
   attemptList: [
+    {
+      correct: true,
+      square: "a1",
+    },
+    {
+      correct: true,
+      square: "b8",
+    },
+    {
+      correct: true,
+      square: "d3",
+    },
+    {
+      correct: true,
+      square: "c8",
+    },
+    {
+      correct: true,
+      square: "f1",
+    },
+    {
+      correct: true,
+      square: "a1",
+    },
+    {
+      correct: true,
+      square: "b8",
+    },
+    {
+      correct: true,
+      square: "d3",
+    },
+    {
+      correct: true,
+      square: "c8",
+    },
+    {
+      correct: true,
+      square: "f1",
+    },
+    {
+      correct: true,
+      square: "a1",
+    },
+    {
+      correct: true,
+      square: "b8",
+    },
+    {
+      correct: true,
+      square: "d3",
+    },
+    {
+      correct: true,
+      square: "c8",
+    },
+    {
+      correct: true,
+      square: "f1",
+    },
     {
       correct: true,
       square: "a1",

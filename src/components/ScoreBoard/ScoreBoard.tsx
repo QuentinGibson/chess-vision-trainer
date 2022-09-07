@@ -14,19 +14,32 @@ const ScoreBoard = ({ attemptList }: Props) => {
   const score =
     attemptList.filter((attemptList) => attemptList.correct).length || 0;
   const attemptListElements = attemptList.map((attempt) => (
-    <li>
+    <li
+      className={`${
+        attempt.correct ? "bg-green-400" : "bg-red-800"
+      } p-2 rounded flex justify-center item-center flex-col h-16 items-center`}
+    >
       {attempt.correct ? <IconCheck /> : <IconCross />}
-      <span>{attempt.square}</span>
+      <span className="text-gray-800 leading-3 pt-2.5 tracking-wide text-sm">
+        {attempt.square}
+      </span>
     </li>
   ));
   return (
-    <div>
-      <div>
-        <div>
-          <h2>Score: {score}</h2>
+    <div className="bg-gray-200 py-5 px-6 shadow-md max-w-md rounded h-120">
+      <div className="flex flex-col">
+        <div className="w-full mb-4 rounded ">
+          <h2 className="text-black text-3xl font-bold tracking-wide ">
+            Score: {score}
+          </h2>
         </div>
         <div>
-          <ul>{attemptListElements}</ul>
+          <ul
+            className="grid grid-gap-2 grid-flow-row grid-cols-4 h-4/6 overflow-auto"
+            tabIndex={0}
+          >
+            {attemptListElements}
+          </ul>
         </div>
       </div>
     </div>

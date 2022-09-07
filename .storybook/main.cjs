@@ -2,6 +2,7 @@ const path = require("path");
 const Icons = require("unplugin-icons/vite");
 const Inspect = require("vite-plugin-inspect");
 const Unocss = require("unocss/vite");
+
 module.exports = {
   stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
@@ -9,6 +10,7 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "storybook-addon-react-router-v6",
+    "@storybook/addon-a11y",
   ],
   framework: "@storybook/react",
   core: {
