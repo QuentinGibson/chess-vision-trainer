@@ -4,7 +4,8 @@ import { useContext } from "react";
 import GameContext from "../../GameContext";
 
 const ScoreBoard = () => {
-  const { attemptList } = useContext(GameContext);
+  const { state } = useContext(GameContext);
+  const { attemptList } = state;
   const score =
     attemptList.filter((attemptList) => attemptList.correct).length || 0;
   const attemptListElements = attemptList.map((attempt) => (

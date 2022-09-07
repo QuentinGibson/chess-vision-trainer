@@ -26,16 +26,22 @@ export const gameReducer = (
         ...initialGameState,
       };
     case ActionType.CreateAttempt:
-      return {
-        ...state,
-        attemptList: [
-          ...state.attemptList,
-          {
-            square: state.square,
-            correct: state.square === action.pickedSquare,
-          },
-        ],
-      };
+      if (state.gameStatus === Status.InProgress) {
+        return {
+          ...state,
+          attemptList: [
+            ...state.attemptList,
+            {
+              square: state.square,
+              correct: state.square === action.pickedSquare,
+            },
+          ],
+        };
+      } else {
+        return {
+          ...state,
+        };
+      }
     default:
       return state;
   }
