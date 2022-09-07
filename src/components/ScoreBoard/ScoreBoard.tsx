@@ -1,22 +1,16 @@
 import IconCheck from "~icons/carbon/checkmark-outline";
 import IconCross from "~icons/carbon/close-outline";
-type Attempt = {
-  correct: boolean;
-  square: string;
-};
+import { useContext } from "react";
+import GameContext from "../../GameContext";
 
-type Props = {
-  attemptList: Attempt[];
-  score: number;
-};
-
-const ScoreBoard = ({ attemptList }: Props) => {
+const ScoreBoard = () => {
+  const { attemptList } = useContext(GameContext);
   const score =
     attemptList.filter((attemptList) => attemptList.correct).length || 0;
   const attemptListElements = attemptList.map((attempt) => (
     <li
       className={`${
-        attempt.correct ? "bg-green-400" : "bg-red-800"
+        attempt.correct ? "bg-green-400" : "bg-red-300"
       } p-2 rounded flex justify-center item-center flex-col h-16 items-center`}
     >
       {attempt.correct ? <IconCheck /> : <IconCross />}
@@ -35,7 +29,7 @@ const ScoreBoard = ({ attemptList }: Props) => {
         </div>
         <div>
           <ul
-            className="grid grid-gap-2 grid-flow-row grid-cols-4 h-4/6 overflow-auto"
+            className="grid grid-gap-2 grid-flow-row grid-cols-4 h-96 overflow-auto"
             tabIndex={0}
           >
             {attemptListElements}
