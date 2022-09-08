@@ -1,17 +1,17 @@
 export enum ActionType {
-  StartTimer,
+  StartGame,
   EndGame,
-  PauseTimer,
+  PauseGame,
   ResetGame,
   CreateAttempt,
 }
 
-export interface StartTimer {
-  type: ActionType.StartTimer;
+export interface StartGame {
+  type: ActionType.StartGame;
 }
 
-export interface PauseTimer {
-  type: ActionType.PauseTimer;
+export interface PauseGame {
+  type: ActionType.PauseGame;
 }
 
 export interface ResetGame {
@@ -26,4 +26,9 @@ export interface CreateAttempt {
   pickedSquare: string;
 }
 
-export type GameActions = ResetGame | EndGame | PauseTimer | StartTimer | CreateAttempt;
+export type GameActions =
+  | ResetGame
+  | EndGame
+  | PauseGame
+  | StartGame
+  | CreateAttempt;
