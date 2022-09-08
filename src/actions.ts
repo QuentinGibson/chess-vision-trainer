@@ -4,8 +4,12 @@ export enum ActionType {
   PauseGame,
   ResetGame,
   CreateAttempt,
+  ResumeGame,
 }
 
+export interface ResumeGame {
+  type: ActionType.ResumeGame;
+}
 export interface StartGame {
   type: ActionType.StartGame;
 }
@@ -31,4 +35,5 @@ export type GameActions =
   | EndGame
   | PauseGame
   | StartGame
+  | ResumeGame
   | CreateAttempt;

@@ -20,6 +20,8 @@ export const gameReducer = (
         gameStatus: Status.InProgress,
         square: generateSquare(),
       };
+    case ActionType.ResumeGame:
+      return state;
     case ActionType.PauseGame:
       return {
         ...state,
@@ -32,6 +34,8 @@ export const gameReducer = (
         square: "",
       };
     case ActionType.ResetGame:
+      const time = new Date();
+      time.setSeconds(time.getSeconds() + 60);
       return {
         ...initialGameState,
       };
@@ -49,9 +53,7 @@ export const gameReducer = (
           square: generateSquare(),
         };
       } else {
-        return {
-          ...state,
-        };
+        return state;
       }
     default:
       return state;
