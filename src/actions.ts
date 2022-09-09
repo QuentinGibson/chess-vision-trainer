@@ -37,3 +37,37 @@ export type GameActions =
   | StartGame
   | ResumeGame
   | CreateAttempt;
+
+export enum TimeActionType {
+  Start,
+  End,
+  Tick,
+  Pause,
+  Reset
+}
+
+export interface Start {
+  type: TimeActionType.Start
+}
+
+export interface End {
+  type: TimeActionType.End
+}
+export interface Tick {
+  type: TimeActionType.Tick
+}
+
+export interface Pause {
+  type: TimeActionType.Pause
+}
+
+export interface Reset {
+  type: TimeActionType.Reset
+}
+
+export type TimeActions =
+  | Start
+  | End
+  | Tick
+  | Pause
+  | Reset

@@ -1,4 +1,4 @@
-import { useReducer } from "@storybook/addons";
+import { useReducer } from "react";
 import GameContext from "./GameContext";
 import { gameReducer } from "./reducers/gameReducer";
 import { initialGameState } from "./state";

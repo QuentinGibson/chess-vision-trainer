@@ -9,5 +9,13 @@ export default function Chessboard() {
     dispatch(createAttempt(pickedSquare));
   };
 
-  return <Chess showNotation={false} onSquareClick={handleClick} />;
+  return (
+    <Chess
+      showNotation={false}
+      onSquareClick={handleClick}
+      calcWidth={({ screenWidth }) => {
+        return 460;
+      }}
+    />
+  );
 }

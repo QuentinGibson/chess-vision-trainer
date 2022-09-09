@@ -1,12 +1,14 @@
 import MainMenu from "./components/MainMenu/MainMenu";
-import GameContextProvider from "./GameContextProvider";
+import GamePage from "./components/GamePage/GamePage";
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
-  return (
-    <GameContextProvider>
-      <MainMenu />
-    </GameContextProvider>
-  );
+    return (
+            <Routes>
+                <Route path="/" element={<MainMenu />} />
+                <Route path="/game" element={<GamePage />} />
+            </Routes>
+    );
 }
 
 export default App;
