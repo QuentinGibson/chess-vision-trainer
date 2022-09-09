@@ -1,5 +1,14 @@
 import "@unocss/reset/tailwind.css";
 import "uno.css";
+import GameContextProvider from "../src/GameContextProvider.tsx"
+
+export const decorators = [
+  (Story) => (
+    <GameContextProvider>
+      <Story/>
+    </GameContextProvider>
+  )
+]
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
