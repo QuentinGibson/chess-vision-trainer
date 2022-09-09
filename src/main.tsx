@@ -7,10 +7,10 @@ import "uno.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <React.StrictMode>
-            <GameContextProvider>
-        <BrowserRouter>
+            <BrowserRouter>
+        <GameContextProvider>
                 <App />
-        </BrowserRouter>
-            </GameContextProvider>
+        </GameContextProvider>
+            </BrowserRouter>
     </React.StrictMode>
 );

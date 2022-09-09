@@ -5,6 +5,7 @@ import {
     GameActions,
     PauseGame,
     ResetGame,
+    ResumeGame,
     StartGame,
 } from "../actions";
 import { GameState, initialGameState, Status } from "../state";
@@ -21,7 +22,10 @@ export const gameReducer = (
                 square: generateSquare(),
             };
         case ActionType.ResumeGame:
-            return state;
+            return {
+                    ...state,
+                    gameStatus: Status.InProgress
+                };
         case ActionType.PauseGame:
             return {
                 ...state,
@@ -39,6 +43,11 @@ export const gameReducer = (
             return {
                 ...initialGameState,
             };
+        case ActionType.ResumeGame:
+            return {
+                ...state,
+                gameStatus: Status.InProgress
+            }
         case ActionType.CreateAttempt:
             if (state.gameStatus === Status.InProgress) {
                 return {
@@ -62,7 +71,6 @@ export const gameReducer = (
 
 let generateSquare: () => string = () => {
     let randomInt = () => Math.floor(Math.random() * 7);
-    console.log(randomInt());
     const row = ["a", "b", "c", "d", "e", "f", "g", "h"];
     const column = ["1", "2", "3", "4", "5", "6", "7", "8"];
 
@@ -101,3 +109,9 @@ export const resetGame = (): ResetGame => {
         type: ActionType.ResetGame,
     };
 };
+
+export const resumeGame = (): ResumeGame => {
+    return {
+        type: ActionType.ResumeGame
+    }
+}
