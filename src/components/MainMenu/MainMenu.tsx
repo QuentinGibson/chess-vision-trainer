@@ -8,6 +8,7 @@ const MainMenu = () => {
         <div className="">
           <img
             src={Logo}
+            height={300}
             alt="Logo for Chess Vision Trainer"
             className="object-cover"
           />
