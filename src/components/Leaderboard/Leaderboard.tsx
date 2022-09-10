@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
 import LoadingIcon from '~icons/line-md/loading-alt-loop'
 
 const Leaderboard = () => {
@@ -11,11 +12,12 @@ const Leaderboard = () => {
                 .then(json => {
                     const records = json.records
                     const recordElements = records.map(
-                    (record: any, index: number) => (<tr key={index}>
-                        <th>{record.name}</th>
-                        <td>{record.score}</td>
-                    </tr>
-                    ))
+                        (record: any, index: number) => (
+                            <tr className="h-20 text-sm leading-none text-gray-700 border-b border-t border-gray-200 bg-white hover:bg-gray-100" key={index}>
+                                <th>{record.name}</th>
+                                <td>{record.score}</td>
+                            </tr>
+                        ))
                     setrecordElements(recordElements)
                 })
             setLoading(false)
@@ -25,22 +27,26 @@ const Leaderboard = () => {
     }, [])
     const loadingIcon = <div><LoadingIcon /></div>
     const table =
-        <div>
-            <table>
+        <div className="" >
+            <table className='w-full whitespace-nowrap'>
                 <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Score</th>
+                    <tr className="h-20 text-sm leading-none text-gray-700 border-b border-t border-gray-200 bg-white hover:bg-gray-100">
+                        <th className="font-normal text-center">Name</th>
+                        <th className="font-normal text-left">Score</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className="w-full">
                     {recordElements}
                 </tbody>
             </table>
         </div>
     return (
-        <div>
-            {loading ? loadingIcon : table}
+        <div className="mt-10">
+            <div className="pl-10"><Link className="shadow bg-white transition duration-150 ease-in-out focus:outline-none rounded text-gray-800 border border-gray-300 px-4 py-3 text-sm" to="/">Return To Menu</Link></div>
+            <div className="flex flex-col justify-center">
+                <h1 className="text-center">Leaderboard</h1>
+                {loading ? loadingIcon : table}
+            </div>
         </div>
     )
 }
